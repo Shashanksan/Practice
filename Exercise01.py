@@ -30,6 +30,7 @@ orders = [
     vegItem("panner", 200),
     nonvegItem("biriyani", 300),
     beverages("coco-cola", 100),
+    print("i love you ")
 ]
 for items in orders:
     print("Item name", items.calculateBill(2))
