@@ -83,7 +83,7 @@ if 1 <= itemCount <= 50:
     if 1 <= price <= 1000:
 
 
-        if itemType=="Veg":
+        if itemType=="eg":
             orders.append(vegItems(name,price))
         elif itemType=="NonVeg":
             orders.append(nonVegItems(name,price))
