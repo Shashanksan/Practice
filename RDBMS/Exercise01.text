@@ -1,0 +1,61 @@
+Multi File Programming Question
+Problem Statement
+
+
+
+Mr. Rajesh, the owner of a retail store, wants to maintain a structured database to efficiently manage customer orders, track items, and ensure accurate billing. The store sells a variety of products, and customers can place multiple orders containing different items. 
+
+
+
+To achieve this, the store management has decided to implement a Customer Order Management System using a relational database. The system consists of four key tables:
+
+Table Details:
+
+
+
+
+
+Sample Records:
+
+
+
+
+
+
+
+Tasks: 
+
+Create all four tables and insert the given sample records into the table.
+
+Input format :
+No Console Input
+
+Output format :
+The output displays the result after executing all queries.
+
+
+
+﻿Refer to the sample output.
+
+Sample test cases :
+Input 1 :
+Output 1 :
+Cust_no	Cust_name	City
+1	John Doe	New York
+2	Alice Smith	Los Angeles
+3	Robert Brown	Chicago
+Order_no	Cust_no	Date1
+1	1	2024-03-01
+2	2	2024-03-02
+3	3	2024-03-03
+Item_no	Item_name	Price
+1	Laptop	1000.00
+2	Smartphone	500.00
+3	Tablet	300.00
+Order_no	Item_no	Quantity
+1	1	2
+2	2	1
+3	3	3
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case.
