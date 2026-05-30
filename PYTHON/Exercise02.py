@@ -43,21 +43,29 @@ class RegularStudent(Student):
     def calculate_result(self):
         return self.get_marks()
 
-
-# Objects
-s1 = SportsStudent("Radhika", 80, 10)
-s2 = RegularStudent("Rahul", 85)
-s3 = RegularStudent("Anjali", 60)
-students = [s1, s2, s3]
+StudentsCount =int(input())
+Students=[]
+for i in range(StudentsCount):
+    Studentname,marks,bonus,StudentType=input().split()
+    if StudentType=="SportsStudent":
+        Students.append(SportsStudent(Studentname,marks,bonus))
+    elif StudentType=="RegularStudent":
+        Students.append(RegularStudent(Studentname,marks))
+    
+# # Objects
+# s1 = SportsStudent("Radhika", 80, 10)
+# s2 = RegularStudent("Rahul", 85)
+# s3 = RegularStudent("Anjali", 60)
+# students = [s1, s2, s3]
 
 # Display details
-for s in students:
+for s in Students:
     print(f"{s.name} Final Marks: {s.calculate_result()} Grade: {s.get_grade()}")
 
 # Ranking
-students.sort(key=lambda x: x.calculate_result(), reverse=True)
+Students.sort(key=lambda x: x.calculate_result(), reverse=True)
 print("\nRanking:")
-for i, s in enumerate(students, 1):
+for i, s in enumerate(Students, 1):
     print(f"{i}. {s.name}")
 
 # Operator overloading
