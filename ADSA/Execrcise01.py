@@ -3,7 +3,8 @@ arr=list(map(int,input().split()))
 def insert():
     pos=int(input())
     val=int(input())
-    if pos>len(arr):
+    print(len(arr))
+    if (pos>len(arr)) or (pos<0):
         print("Invalid position.")
     else :
         arr.insert(pos,val)
@@ -19,7 +20,8 @@ def delete():
         
     
 def view():
-    if(arr.count==0):
+    print(len(arr))
+    if(len(arr)==0):
         print("Array is empty")
     else:
         print("Current array:",*arr)
