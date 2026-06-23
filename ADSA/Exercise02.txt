@@ -1,0 +1,114 @@
+Problem Statement:
+
+
+
+Ravi is building a simple tab history system where users can move back and forward between web pages. 
+
+This behaviour can be modelled using a doubly linked list, where:
+
+New pages are added at the end (like forward navigation).
+Older pages are removed from the beginning.
+Users may also close the current tab (delete at the end).
+The tab list can be viewed both from start to end and in reverse.
+
+
+Help Ravi by writing a Python program to:
+
+Insert at the beginning
+Insert at the end
+Delete from beginning
+Delete from end
+Display forward and backward
+Input format :
+Each operation is given as a line of input.
+
+
+
+The first integer in each line is a choice that specifies the operation type:
+
+1 <value> — Insert <value> at the front of the list.
+2 <value> — Insert <value> at the end of the list.
+3 — Delete from the front of the list.
+4 — Delete from the end of the list.
+5 — Display the list forward (from head to tail).
+6 — Display the list backward (from tail to head).
+7 — Exit the program.
+
+
+The input ends when choice 7 is encountered or on EOF.
+
+
+
+Output format :
+For Insert Front (choice 1): Print Inserted <value> at the front.
+
+
+
+For Insert End (choice 2): Print Inserted <value> at the end.
+
+
+
+For Delete Front (choice 3):
+
+If list is empty, print: List is empty. Cannot delete from front.
+Otherwise, print: Deleted <value> from front.
+
+
+For Delete End (choice 4):
+
+If list is empty, print: List is empty. Cannot delete from end.
+Otherwise, print: Deleted <value> from end.
+
+
+For Display Forward (choice 5):
+
+If list is empty, print: List is empty.
+Otherwise, print: List (forward): <val1> <val2> ... <valN>
+
+
+For Display Backward (choice 6):
+
+If list is empty, print: List is empty.
+Otherwise, print: List (backward): <valN> <valN-1> ... <val1>
+
+
+For Exit (choice 7): Program terminates with no output.
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+1 < value < 300
+
+Sample test cases :
+Input 1 :
+3
+4
+1 10
+2 20
+1 5
+2 30
+5
+6
+3
+4
+5
+6
+7
+Output 1 :
+List is empty. Cannot delete from front.
+List is empty. Cannot delete from end.
+Inserted 10 at the front.
+Inserted 20 at the end.
+Inserted 5 at the front.
+Inserted 30 at the end.2
+List (forward): 5 10 20 30 
+List (backward): 30 20 10 5 
+Deleted 5 from front.
+Deleted 30 from end.
+List (forward): 10 20 
+List (backward): 20 10 
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case.
