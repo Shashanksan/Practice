@@ -1,0 +1,67 @@
+Single File Programming Question
+Problem Statement
+
+
+
+Design an ATM Withdrawal System using Python OOP and Exception Handling concepts. The system should manage account withdrawals by validating different transaction conditions.
+
+
+
+The system should:
+
+Check whether the withdrawal amount is valid
+Ensure withdrawal amount does not exceed account balance
+Handle invalid inputs like negative values and non-numeric data
+Prevent unsafe transactions using exception handling
+
+
+Implement the following:
+
+Use encapsulation to store account balance
+Use custom exceptions for error handling
+Use try-except blocks to handle errors
+Use validation logic for withdrawal rules
+Use raise keyword to trigger exceptions
+Input format :
+The first line of input consists of an integer, representing the initial account balance.
+
+The second line of input consists of an integer, representing the withdrawal amount.
+
+Output format :
+The first line of output prints Withdrawal successful. Remaining balance: Rs.<balance> if the transaction is valid.
+
+
+
+If the withdrawal amount exceeds the balance, print Transaction Failed: Not enough balance
+
+
+
+If the withdrawal amount is zero or negative, print Invalid Amount: Amount must be greater than 0
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+1 <= balance <= 1000000
+-100000 <= withdrawal amount <= 1000000
+
+Sample test cases :
+Input 1 :
+10000
+2000
+Output 1 :
+Withdrawal successful. Remaining balance: Rs.8000
+Input 2 :
+10000
+20000
+Output 2 :
+Transaction Failed: Not enough balance
+Input 3 :
+10000
+-100
+Output 3 :
+Invalid Amount: Amount must be greater than 0
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case.
