@@ -1,0 +1,79 @@
+Single File Programming Question
+Problem Statement
+
+
+
+Design an Online Exam Result System using Python OOP and Exception Handling concepts. The system should manage student details and calculate grades based on marks validation.
+
+
+
+The system should:
+
+Validate that the student name is not empty
+Ensure marks are within valid range (0-100)
+Assign grades based on marks
+Handle invalid inputs using exception handling
+Prevent incorrect result processing
+
+
+Marks ≥ 90 → Grade "A"
+
+75 ≤ Marks < 90 → Grade "B"
+
+50 ≤ Marks < 75 → Grade "C"
+
+Marks < 50 → Grade "Fail"
+
+
+
+Implement the following:
+
+Use encapsulation to protect student data
+Use custom exceptions for validation errors
+Use try-except blocks to handle errors
+Use logical conditions for grade calculation
+Use raise keyword to trigger exceptions
+Input format :
+The first line of input consists of a string, representing the student's name (can be empty).
+
+The second line of input consists of an integer, representing the student's marks.
+
+Output format :
+The first line of output prints <Student Name> got grade: <Grade> if the input is valid.
+
+
+
+If the name is empty, print Data Error: Student name is missing
+
+
+
+If marks are outside 0 to 100, print Marks Error: Marks must be between 0 and 100
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+-100 <= marks <= 200
+Name can be an empty string.
+
+Sample test cases :
+Input 1 :
+Soni
+85
+Output 1 :
+Soni got grade: B
+
+Input 2 :
+
+70
+Output 2 :
+Data Error: Student name is missing
+Input 3 :
+Rahul
+120
+Output 3 :
+Marks Error: Marks must be between 0 and 100
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case.

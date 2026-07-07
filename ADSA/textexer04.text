@@ -1,0 +1,44 @@
+Single File Programming Question
+Problem Statement:
+
+
+
+Aryan is an MCA student working on a project to understand hierarchical data structures, particularly Binary Trees. To gain practical experience, he decides to build a Binary Tree by taking recursive inputs from the user. Once the tree is constructed, Aryan wants to visualize the structure using three different types of depth-first traversals:
+
+In-Order Traversal – to process nodes in left-root-right order
+Pre-Order Traversal – to explore the structure root-left-right
+Post-Order Traversal – to simulate tasks that require child-first processing
+
+
+Help Aryan by writing a Python program that:
+
+Builds a binary tree using recursive input (accepting -1 to denote NULL children)
+Performs and displays the result of all three traversals
+Input format :
+A single line of space-separated integers representing node values in pre-order format (root, left subtree, right subtree).
+
+Use -1 to denote a NULL or non-existent child.
+
+Output format :
+The output prints the three traversals of the binary tree:
+
+First line: "In-Order Traversal:" followed by the values in in-order.
+Second line: "Pre-Order Traversal:" followed by the values in pre-order.
+Third line: "Post-Order Traversal:" followed by the values in post-order.
+
+
+Refer to the sample output for formatting specifications.
+
+Sample test cases :
+Input 1 :
+1 2 4 -1 -1 5 -1 -1 3 -1 6 -1 -1
+Output 1 :
+In-Order Traversal:
+4 2 5 1 3 6 
+Pre-Order Traversal:
+1 2 4 5 3 6 
+Post-Order Traversal:
+4 5 2 6 3 1 
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case.
