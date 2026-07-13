@@ -1,0 +1,90 @@
+ingle File Programming Question
+Problem Statement:
+
+
+
+Deepak, a graduate student working on a Python-based student ID management system, wants to efficiently store and retrieve student IDs using hashing. However, since multiple IDs might hash to the same index, he decides to explore collision resolution techniques.
+
+To handle such collisions, Deepak implements two classic methods:
+
+Linear Probing – where the algorithm searches linearly for the next available slot.
+Quadratic Probing – where the algorithm searches in quadratic steps to reduce clustering.
+
+
+Your task is to help Deepak develop a Python program that:
+
+Inserts student IDs into a hash table using either linear or quadratic probing.
+Searches for a student ID using the chosen probing technique.
+Displays the current state of the hash table.
+Handles invalid choices and edge cases gracefully
+Input format :
+Each line of input represents a command in the following format:
+
+
+
+1 <ID> <method> → Insert student ID
+
+<ID>: Integer value representing the student ID
+<method>: 1 for Linear Probing, 2 for Quadratic Probing
+
+
+2 <ID> <method> → Search for a student ID
+
+<ID>: Integer value to search
+<method>: 1 for Linear Probing, 2 for Quadratic Probing
+
+
+3 → Display the current state of the hash table
+
+
+
+4 → Exit the program
+
+Output format :
+The output displays the following:
+
+1. On successful insertion: Value <ID> inserted successfully using Linear Probing or Value <ID> inserted successfully using Quadratic Probing.
+
+2. On insertion failure: Hash table is full. Insertion failed.
+
+3. On search:
+
+If found: Value <ID> found at index <index> using Linear Probing. or Value <ID> found at index <index> using Quadratic Probing.
+If not found: Value <ID> not found using Linear Probing or Value <ID> not found using Quadratic Probing.
+4. On display: <space-separated list of 10 elements in the hash table, -1 for empty slots>
+
+5. On invalid input: Invalid probing method. or Invalid choice.
+
+
+
+Refer to the sample output for formatting specifications.
+
+Sample test cases :
+Input 1 :
+1 25 1
+1 35 1
+1 45 2
+1 15 2
+2 35 1
+2 15 2
+2 99 2
+3
+1 55 3
+2 35 3
+5
+4
+Output 1 :
+Value 25 inserted successfully using Linear Probing.
+Value 35 inserted successfully using Linear Probing.
+Value 45 inserted successfully using Quadratic Probing.
+Value 15 inserted successfully using Quadratic Probing.
+Value 35 found at index 6 using Linear Probing.
+Value 15 found at index 4 using Quadratic Probing.
+Value 99 not found using Quadratic Probing.
+-1 -1 -1 -1 15 25 35 -1 -1 45
+Invalid probing method.
+Invalid probing method.
+Invalid choice.
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case.

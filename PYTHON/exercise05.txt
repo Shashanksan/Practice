@@ -1,0 +1,79 @@
+
+Single File Programming Question
+Problem Statement
+
+
+
+Design a Login Authentication System using Python OOP and Exception Handling concepts. The system should validate user credentials and protect against brute-force login attacks.
+
+
+
+The system should:
+
+Validate username (user1) and password (securepassword)
+Detect missing credentials
+Track failed login attempts
+Lock the account after 3 incorrect attempts
+Maintain a log of failed attempts
+Prevent unauthorized access using exception handling
+
+
+Implement the following:
+
+Use encapsulation to protect login data
+Use custom exceptions for security errors
+Use try-except blocks to handle errors
+Use validation logic for authentication
+Use raise keyword to trigger exceptions
+Input format :
+The first line of input consists of an integer N, representing the number of login attempts.
+
+The next N lines each consist of two space-separated strings, representing the username and password for each attempt.
+
+Output format :
+For a successful login, print Login successful!
+
+
+
+For each failed attempt, print Invalid credentials. Attempt: <count>.
+
+
+
+After 3 failed attempts, print Security Alert: Too many failed attempts! Account locked.
+
+
+
+If credentials are empty, print Authentication Error: Username or password cannot be empty
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+1 <= N <= 10
+Username and password are single word strings or empty.
+
+Sample test cases :
+Input 1 :
+1
+user1 securepassword
+Output 1 :
+Login successful!
+Input 2 :
+3
+user1 wrong
+user1 wrong
+user1 wrong
+Output 2 :
+Invalid credentials. Attempt: 1
+Invalid credentials. Attempt: 2
+Invalid credentials. Attempt: 3
+Security Alert: Too many failed attempts! Account locked.
+Input 3 :
+1
+user1 
+Output 3 :
+Authentication Error: Username or password cannot be empty
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case.

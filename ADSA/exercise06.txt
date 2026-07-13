@@ -1,0 +1,77 @@
+Problem Statement:
+
+
+
+Krish is building a priority-based task manager where tasks are assigned numeric priorities — the higher  the number, the higher the urgency. To ensure that highest-priority tasks are always processed first, he implements a Max-Heap–based Priority Queue.
+
+His system must:
+
+Allow insertion of new tasks with priority values.
+Always extract the maximum (highest-priority) task.
+Allow viewing the current heap contents.
+Gracefully handle invalid operations or empty heap conditions.
+
+
+Help Krish write a Python program that:
+
+Supports insertion, extraction, and display of a max-heap.
+Works without live user prompts.
+Accepts custom multi-line input (safe for online platforms).
+Handles edge cases like invalid input and empty heap behaviour.
+Input format :
+Each line of input represents an operation with the following choices:
+
+1 <value> - Insert a task with the given numeric priority (positive integer).
+
+2 - Extract (remove and return) the task with the highest priority.
+
+3 - Display the current state of the heap.
+
+4 - Exit the program.
+
+Output format :
+The output displays the following:
+
+On successful insertion: Element <value> inserted into the heap.
+
+On invalid insertion (e.g., missing or non-numeric value): Invalid insertion command.
+
+On extraction:
+
+If heap is not empty: Highest priority element <value> extracted.
+If heap is empty: Heap is empty. No elements to extract.
+On display:
+
+If heap has elements: <space-separated list of elements in heap array format>
+If heap is empty: Heap is empty.
+On invalid operation code: Invalid choice.
+
+
+
+Refer to the sample output for formatting specifications.
+
+Sample test cases :
+Input 1 :
+2
+3
+1 -5
+1 100
+1 200
+3
+2
+3
+5
+4
+Output 1 :
+Heap is empty. No elements to extract.
+Heap is empty.
+Invalid insertion command.
+Element 100 inserted into the heap.
+Element 200 inserted into the heap.
+200 100
+Highest priority element 200 extracted.
+100
+Invalid choice.
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case.

@@ -1,0 +1,120 @@
+Problem Statement
+
+
+
+Design a Student Marks Performance Analysis System using Python and NumPy. The system should analyze marks of students in multiple subjects and identify performance trends using statistical analysis.
+
+
+
+Dataset Details
+
+Marks are generated using np.random.seed(42) as a 2D array of shape (5 students × 5 subjects) using np.random.randint(50, 100, (5, 5)):
+
+Each row = one student. Each column = one subject.
+
+
+
+The system should:
+
+Store marks of 5 students across 5 subjects as a NumPy 2D array
+Calculate average marks per student across all subjects (axis=1)
+Find the highest and lowest scorer using np.argmax() and np.argmin()
+Analyze consistency using standard deviation per student (axis=1)
+Identify students scoring above class average
+Normalize marks using Min-Max scaling
+Compute subject-wise average marks (axis=0)
+Rank students based on performance score (highest first)
+
+
+Implement the following:
+
+Use np.random.seed(42) with np.random.randint(50, 100, (5, 5)) for data
+Use np.mean() with axis=0 for subject averages, axis=1 for student averages
+Use np.std() with axis=1 for per-student standard deviation
+Use np.argmax() / np.argmin() on average marks for top/low scorer
+Use np.argsort()[::-1] on performance score for ranking
+Use boolean arrays for above-average and consistency checks
+Apply global marks.min() and marks.max() for normalization
+
+
+Formula:
+
+Consistent Students     → std_dev < 12
+
+Performance Score       = avg_marks / std_dev
+
+Min-Max Normalization   = (marks - min) / (max - min)
+
+Input format :
+No user input required. The program uses NumPy random seed 42 to generate fixed marks for 5 students x 5 subjects in the range 50 to 100.
+
+Output format :
+The first line of output prints Student Marks: followed by the 5×5 marks array.
+
+The second line of output prints Average Marks: followed by the average marks of each student.
+
+The third line of output prints Subject Average: followed by the subject-wise average marks.
+
+The fourth line of output prints Students Above Class Average: followed by True or False for each student.
+
+The fifth line of output prints Consistent Students: followed by True or False for each student.
+
+The sixth line of output prints Top Student Index: followed by the index of the highest scoring student.
+
+The seventh line of output prints Lowest Scorer Index: followed by the index of the lowest scoring student.
+
+The eighth line of output prints Normalized Marks: followed by the 5×5 normalized array.
+
+The ninth line of output prints Performance Score: followed by the performance scores of each student.
+
+The tenth line of output prints Performance Rank: followed by the ranked indices of students.
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+Fixed random seed = 42
+
+Number of students = 5
+
+Number of subjects = 5
+
+Marks range = [50, 100) (integers)
+
+Consistent = std_dev < 12
+
+Performance Score = avg_marks / std_dev
+
+Normalization uses global min/max across entire marks array
+
+Sample test cases :
+Input 1 :
+Output 1 :
+Student Marks:
+ [[88 78 64 92 57]
+ [70 88 68 72 60]
+ [60 73 85 89 73]
+ [52 71 51 73 93]
+ [79 87 51 70 82]]
+
+Average Marks: [75.8 71.6 76.  68.  73.8]
+Subject Average: [69.8 79.4 63.8 79.2 73. ]
+Students Above Class Average: [ True False  True False  True]
+Consistent Students: [False  True  True False False]
+
+Top Student Index: 2
+Lowest Scorer Index: 3
+
+Normalized Marks:
+ [[0.88095238 0.64285714 0.30952381 0.97619048 0.14285714]
+ [0.45238095 0.88095238 0.4047619  0.5        0.21428571]
+ [0.21428571 0.52380952 0.80952381 0.9047619  0.52380952]
+ [0.02380952 0.47619048 0.         0.52380952 1.        ]
+ [0.66666667 0.85714286 0.         0.45238095 0.73809524]]
+
+Performance Score: [5.62237811 7.81965131 7.42391432 4.38208373 5.8242188 ]
+Performance Rank: [1 2 4 0 3]
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case.
