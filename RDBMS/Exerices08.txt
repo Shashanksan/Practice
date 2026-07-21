@@ -1,0 +1,64 @@
+-- 1. List the state having the maximum number of tourist places
+
+SELECT state
+FROM tourist_place
+GROUP BY state
+ORDER BY COUNT(*) DESC
+LIMIT 1;
+
+
+-- 2. List details of tourist places where the maximum number of tourists visited
+
+SELECT tp.placeName AS tplacename,
+       tp.state,
+       COUNT(tvp.touristid) AS visitor_count
+FROM tourist_place tp
+JOIN tourist_visited_places tvp
+ON tp.placeid = tvp.placeid
+GROUP BY tp.placeid, tp.placeName, tp.state
+HAVING COUNT(tvp.touristid) = (
+    SELECT MAX(cnt)
+    FROM (
+        SELECT COUNT(*) AS cnt
+        FROM tourist_visited_places
+        GROUP BY placeid
+    ) x
+);
+
+
+-- 3. List details of tourists who visited all tourist places of the state 'KARNATAKA'
+
+SELECT t.touristid,
+       t.name AS touristname,
+       t.age,
+       t.country
+FROM tourist t
+JOIN tourist_visited_places tvp
+ON t.touristid = tvp.touristid
+JOIN tourist_place tp
+ON tvp.placeid = tp.placeid
+WHERE tp.state = 'KARNATAKA'
+GROUP BY t.touristid, t.name, t.age, t.country
+HAVING COUNT(DISTINCT tp.placeid) = (
+    SELECT COUNT(*)
+    FROM tourist_place
+    WHERE state = 'KARNATAKA'
+);
+
+
+-- 4. List the tourist(s) who visited the maximum number of places
+
+SELECT t.name AS touristname,
+       COUNT(tvp.placeid) AS Visit_Count
+FROM tourist t
+JOIN tourist_visited_places tvp
+ON t.touristid = tvp.touristid
+GROUP BY t.touristid, t.name
+HAVING COUNT(tvp.placeid) = (
+    SELECT MAX(cnt)
+    FROM (
+        SELECT COUNT(*) AS cnt
+        FROM tourist_visited_places
+        GROUP BY touristid
+    ) x
+);

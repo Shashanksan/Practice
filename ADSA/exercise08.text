@@ -1,0 +1,84 @@
+Single File Programming Question
+Problem Statement:
+
+
+
+Vikram is studying sorting algorithms to efficiently manage and process large volumes of data. 
+
+To deepen his understanding, he decides to implement two fundamental divide-and-conquer sorting techniques:
+
+Quick Sort, known for its in-place sorting and efficient performance on average
+Merge Sort, known for its stable sorting and predictable performance
+
+
+Your task is to help Vikram write a Python program that:
+
+Accepts an array of integers.
+Allows the user to apply Quick Sort or Merge Sort separately.
+Displays the sorted result for each method.
+Prints the theoretical time complexities of both algorithms.
+Handles invalid menu choices appropriately.
+Input format :
+The first line contains an integer n — the number of elements in the array.
+
+The second line contains n space-separated integers — the array elements.
+
+The subsequent lines contain integer menu choices as follows:
+
+1 → Apply Quick Sort and print the sorted array.
+2 → Apply Merge Sort and print the sorted array.
+3 → Display theoretical time complexities.
+4 → Exit the program.
+Output format :
+The output displays the following:
+
+After Quick Sort: Display the sorted array.
+After Merge Sort: Display the sorted array.
+After choosing time complexities:
+Quick Sort Time Complexity:
+
+Best Case: O(n log n)
+Average Case: O(n log n)
+Worst Case: O(n^2)
+Merge Sort Time Complexity:
+
+Best Case: O(n log n)
+Average Case: O(n log n)
+Worst Case: O(n log n)
+If the number of input elements doesn't match n: Error: Mismatch between count and number of elements.
+If an invalid choice is entered: Invalid choice.
+If other exceptions occur (e.g., wrong input type): Error: <description>
+
+
+Refer to the sample output for formatting specifications.
+
+Sample test cases :
+Input 1 :
+5
+10 5 3 8 2
+1
+2
+3
+9
+4
+Output 1 :
+2 3 5 8 10
+2 3 5 8 10
+Quick Sort Time Complexity:
+Best Case: O(n log n)
+Average Case: O(n log n)
+Worst Case: O(n^2)
+
+Merge Sort Time Complexity:
+Best Case: O(n log n)
+Average Case: O(n log n)
+Worst Case: O(n log n)
+Invalid choice.
+Input 2 :
+4
+1 2 3 4 5
+Output 2 :
+Error: Mismatch between count and number of elements.
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case.

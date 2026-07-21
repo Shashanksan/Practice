@@ -3,7 +3,7 @@ import numpy as np
 # Generate fixed random data
 np.random.seed(42)
 
-bp = np.random.randint(110, 150, (7, 5))
+bp = np.random.randint(110, 150, (7, 5))  
 hr = np.random.randint(60, 110, (7, 5))
 spo2 = np.random.randint(90, 100, (7, 5))
 

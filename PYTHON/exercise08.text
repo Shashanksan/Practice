@@ -1,0 +1,95 @@
+Single File Programming Question
+Problem Statement
+
+
+
+Design an Employee Performance and Salary Analysis System using Python and Pandas. The system should analyze employee data to support salary decisions, promotions, and workforce management.
+
+
+
+Enter the following dataset manually.
+
+Employee Table:
+
+
+
+
+
+
+
+The system should:
+
+Store employee details such as Name, Age, Department and Salary
+Add employee experience data
+Experience column is generated using NumPy with np.random.seed(1) and np.random.randint(1, 10, size=6)
+Calculate average salary of each department
+Find highest paid employee with more than 5 years experience
+Identify department with youngest average age
+Calculate bonus and total salary
+Display employees earning above department average salary
+
+
+Implement the following:
+
+Use pandas.DataFrame for storing and manipulating employee data
+Use groupby() with mean() for department-level aggregations
+Use np.random.seed(1) and np.random.randint(1, 10) for reproducible experience data
+Use idxmax() and idxmin() for finding top/bottom performers
+Use map() with department averages to filter employees above department average
+Apply integer arithmetic for bonus: Salary * 10 // 100
+
+
+Bonus = Salary x 10 / 100
+
+Total Salary = Salary + Bonus
+
+Input format :
+No user input required. The program uses a fixed dataset of 6 employees with NumPy random seed 1 for experience data.
+
+Output format :
+The first line of output prints Average Salary by Department: followed by the department-wise average salary.
+
+The second line of output prints Highest Paid Employee: followed by the name of the highest paid employee with more than 5 years experience.
+
+The third line of output prints Department with Youngest Average Age: followed by the department name.
+
+The fourth line of output prints Employees Above Department Average Salary: followed by the names of qualifying employees.
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+Fixed dataset of exactly 6 employees
+
+Three departments: HR, IT, Finance
+
+Fixed random seed = 1 for experience generation
+
+Experience values are integers in range [1, 10)
+
+Bonus rate = 10%
+
+Only employees with Experience > 5 are considered for highest paid
+
+Sample test cases :
+Input 1 :
+Output 1 :
+Average Salary by Department:
+ Department
+Finance    67500.0
+HR         52500.0
+IT         75000.0
+Name: Salary, dtype: float64
+
+Highest Paid Employee:
+ Charlie
+
+Department with Youngest Average Age: Finance
+
+Employees Above Department Average Salary:
+ 2    Charlie
+4        Eve
+5      Frank
+Name: Name, dtype: object
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case.

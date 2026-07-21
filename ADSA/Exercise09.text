@@ -1,0 +1,78 @@
+Single File Programming Question
+Problem Statement:
+
+
+
+Ishaan is exploring how computers simulate connections in networks, maps, and social platforms. To better understand how different parts of a graph are visited, he decides to implement two key graph traversal algorithms:
+
+Breadth-First Search (BFS) – explores level by level using a queue.
+Depth-First Search (DFS) – dives deeper using recursive backtracking.
+He wants to work with undirected graphs represented by an adjacency matrix, where each vertex may or may not be connected to others.
+
+
+
+Help Ishaan write a Python program that:
+
+Builds a graph from user input using an adjacency matrix.
+Accepts a starting node and performs BFS and DFS.
+Displays the result of each traversal.
+Handles invalid choices and invalid vertex indices gracefully.
+Input format :
+The first line contains an integer n — the number of vertices in the graph.
+
+The next n lines each contain n space-separated integers (0 or 1) representing the adjacency matrix of an undirected
+
+graph.
+
+
+
+Subsequent lines contain commands of the following format:
+
+1 s → Perform BFS from starting node s.
+2 s → Perform DFS from starting node s.
+3 → Exit the program.
+Output format :
+The output displays the following:
+
+Space-separated values representing the order in which nodes are visited using Breadth-First Search.
+Space-separated values representing the order in which nodes are visited using Depth-First Search.
+If a row in the adjacency matrix doesn't have exactly n elements: Invalid row size.
+If the user provides an invalid starting vertex (e.g., out of bounds): Invalid source vertex.
+If a traversal command is malformed (e.g., missing start vertex): Invalid input.
+If the user enters an invalid menu choice: Invalid choice.
+
+
+Refer to the sample output for formatting specifications.
+
+Sample test cases :
+Input 1 :
+4
+0 1 1 0
+1 0 0 1
+1 0 0 1
+0 1 1 0
+1 0
+2 0
+1 5
+2
+1
+2
+9
+3
+Output 1 :
+0 1 2 3
+0 1 3 2
+Invalid source vertex.
+Invalid input.
+Invalid input.
+Invalid input.
+Invalid choice.
+Input 2 :
+2
+0 1 0
+1 0
+Output 2 :
+Invalid row size.
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case.

@@ -63,7 +63,7 @@ for line in sys.stdin:
             continue
 
         try:
-            value = int(parts[1])
+            value = int(parts[1]) 
             method = int(parts[2])
         except ValueError:
             print("Invalid choice.")

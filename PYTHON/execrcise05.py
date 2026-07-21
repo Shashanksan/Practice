@@ -14,16 +14,16 @@ class LoginSystem:
         self.__username = "user1"
         self.__password = "securepassword"
         self.__failed_attempts = 0
-        self.__failed_log = []
         self.__locked = False
 
     def authenticate(self, username, password):
+
         if self.__locked:
             raise SecurityError(
                 "Security Alert: Too many failed attempts! Account locked."
             )
 
-        if not username or not password:
+        if username == "" or password == "":
             raise AuthenticationError(
                 "Authentication Error: Username or password cannot be empty"
             )
@@ -32,8 +32,6 @@ class LoginSystem:
             return True
 
         self.__failed_attempts += 1
-        self.__failed_log.append((username, self.__failed_attempts))
-
         print(f"Invalid credentials. Attempt: {self.__failed_attempts}")
 
         if self.__failed_attempts >= 3:
@@ -45,29 +43,25 @@ class LoginSystem:
         return False
 
 
-lines = sys.stdin.readlines()
+n = int(input())
+login_system = LoginSystem()
 
-if lines:
-    n = int(lines[0].strip())
-    login_system = LoginSystem()
+for _ in range(n):
+    try:
+        line = input()
 
-    for i in range(1, n + 1):
-        if i < len(lines):
-            parts = lines[i].strip().split()
-        else:
-            parts = []
+        parts = line.split(" ", 1)
 
         username = parts[0] if len(parts) > 0 else ""
         password = parts[1] if len(parts) > 1 else ""
 
-        try:
-            if login_system.authenticate(username, password):
-                print("Login successful!")
-                break
-
-        except AuthenticationError as e:
-            print(e)
-
-        except SecurityError as e:
-            print(e)
+        if login_system.authenticate(username, password):
+            print("Login successful!")
             break
+
+    except AuthenticationError as e:
+        print(e)
+
+    except SecurityError as e:
+        print(e)
+        break
