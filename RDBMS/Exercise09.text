@@ -1,0 +1,37 @@
+-- 1. Count the number of voters in each state
+
+SELECT State,
+       COUNT(*) AS Total_Voters
+FROM Voter
+GROUP BY State;
+
+
+-- 2. Get the total number of votes per constituency
+
+SELECT Coined,
+       No_of_vote AS Total_Votes
+FROM Constituency;
+
+
+-- 3. Candidates contesting from more than one constituency
+--    belonging to different states
+
+SELECT c.cid,
+       c.Cname,
+       COUNT(DISTINCT cs.State) AS Num_States
+FROM Candidate c
+JOIN Contest ct
+ON c.cid = ct.cid
+JOIN Constituency cs
+ON ct.Coined = cs.Coined
+GROUP BY c.cid, c.Cname
+HAVING COUNT(DISTINCT cs.State) > 1;
+
+
+-- 4. State having the maximum number of constituencies
+
+SELECT State
+FROM Constituency
+GROUP BY State
+ORDER BY COUNT(*) DESC
+LIMIT 1;

@@ -1,0 +1,38 @@
+-- 1. Display candidate names along with the names of constituencies they are contesting from
+
+SELECT c.Cname,
+       cs.Cname AS Conname
+FROM Candidate c
+JOIN Contest ct
+ON c.cid = ct.cid
+JOIN Constituency cs
+ON ct.Coined = cs.Coined;
+
+
+-- 2. List all constituencies along with the number of voters registered in each
+
+SELECT cs.Cname AS Conname,
+       COUNT(v.vid) AS Voter_Count
+FROM Constituency cs
+LEFT JOIN Voter v
+ON cs.Coined = v.Coined
+GROUP BY cs.Coined, cs.Cname;
+
+
+-- 3. Get the total number of votes received by each candidate
+
+SELECT c.Cname,
+       COUNT(v.vid) AS Total_Votes
+FROM Candidate c
+LEFT JOIN Voter v
+ON c.cid = v.cid
+GROUP BY c.cid, c.Cname;
+
+
+-- 4. List voters grouped by the candidate they voted for
+
+SELECT c.Cname,
+       v.Vname AS Voters
+FROM Candidate c
+JOIN Voter v
+ON c.cid = v.cid;
